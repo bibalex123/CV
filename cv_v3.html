@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BIIN Portfolio</title>
+  <link rel="stylesheet" href="st.css" />
+  <style>
+   /*important styles need to keep it here for all the scrolling stuff*/
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      width: 0%;
+      z-index: 9999;
+    }
+
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-in-out;
+    }
+
+    .scroll-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-links a.active {
+      color: #8e2de2;
+      font-weight: bold;
+      border-bottom: 2px solid #8e2de2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Header -->
+  <header id="main-header">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- About Section -->
+    <section class="about scroll-animate" id="about">
+      <div class="info">
+        <h1><span class="highlight">About Me</span></h1>
+        <p>Hi! I'm <strong>Bibin Alex Tom</strong>, Aspiring web and UI/UX designer with a strong foundation in design tools and modern web design practices. Passionate about creating user-friendly, aesthetically pleasing digital experiences.</p>
+        <p>My objective: Seeking opportunities to apply design knowledge and continuously learn emerging technologies while contributing effectively to team goals and contribute meaningfully to a company's vision.</p>
+        <div class="contact">
+          <h3>Contact</h3>
+          <ul>
+            <li>📧 bibinalextom18@gmail.com</li>
+            <li>📞 +91 9496692662</li>
+            <li><img src="linked in.png" alt=""> <a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="your-photo.jpg" alt="Profile Photo" />
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section scroll-animate" id="skills">
+      <div class="skills-title">
+        <h2>Skills & Experience</h2>
+        <p>What I bring to the table</p>
+      </div>
+      <div class="skills-grid">
+        <div class="card skill-card scroll-animate">
+          <h2>Education</h2>
+          <p><strong>Bachelor of Technology (B.Tech)
+                    Amal Jyoti College of Engineering
+                    
+</strong><br>2020 - 2028</p>
+        </div>
+
+        <div class="card skill-card scroll-animate">
+          <h2>Technical Skills</h2>
+          <div class="icons">
+            <div><img src="figma.png" alt="Figma" /><p>Figma</p></div>
+            <div><img src="c.png" alt="C" /><p>C</p></div>
+            <div><img src="html.png" alt="HTML" /><p>HTML</p></div>
+            <div><img src="python.png" alt="Python" /><p>Python</p></div>
+            <div><img src="vs.png" alt="VS Code" /><p>VS Code</p></div>
+            <div><img src="Photoshop.png" alt="Photoshop" /><p>Photoshop</p></div>
+          </div>
+        </div>
+
+        <div class="card skill-card scroll-animate">
+          <h2>Soft Skills</h2>
+          <ul>
+            <li>Teamwork</li>
+            <li>Critical Thinking</li>
+            <li>Communication</li>
+            <li>Time Management</li>
+          </ul>
+        </div>
+
+        <div class="card skill-card scroll-animate">
+          <h2>Skill Set</h2>
+          <ul>
+            <li>Basic Programming</li>
+            <li>Networking Basics</li>
+            <li>App & Web Design</li>
+            <li>Cyber Security Awareness</li>
+          </ul>
+        </div>
+
+        <div class="card skill-card wide-card scroll-animate">
+          <h2>Interests & Languages</h2>
+          <p><strong>Interests:</strong> Design Trends, Technology</p>
+          <p><strong>Languages:</strong>English | Malayalam</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section scroll-animate" id="projects">
+      <div class="skills-title">
+        <h2>My Projects</h2>
+        <p>Some of my recent work and creative showcases</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="project1.jpg" alt="Project 1 Screenshot" />
+          <h3>Shoe Store Website</h3>
+          <p>A responsive and visually appealing shoe store website built using HTML, CSS, and JavaScript. The site features a dynamic homepage with a featured products section, clean navigation, product listings with images and prices, and a user-friendly layout. Designed to provide a seamless shopping experience with interactive elements like hover effects, animated buttons, and a scroll progress bar. Ideal for showcasing modern footwear collections..</p>
+          <a href="https://your-project-link.com" target="_blank">View Project →</a>
+        </div>
+        <div class="project-card">
+          <img src="project2.jpg" alt="Project 2 Screenshot" />
+          <h3>Not Available</h3>
+          <p>Space for future projects</p>
+          <a href="https://your-project-link.com" target="_blank">View Project →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section scroll-animate" id="contact">
+      <h2>Let’s Connect</h2>
+      <p><a href="">Contact</a></p>
+    </section>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+    });
+
+    // Scroll-triggered animations
+    const animatedEls = document.querySelectorAll(".scroll-animate");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // animate only once
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animatedEls.forEach((el) => observer.observe(el));
+
+    // Active section highlight in nav
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
